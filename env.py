@@ -67,7 +67,7 @@ class MazeEnv():
 
 	def Q_learning(self, action_id, reward, Q, eta, gamma):
 		#Q[s,a] = Q[s,a] + eta*(r + gamma*np.nanmax(Q[s_next,:]) - Q[s,a])
-		#r is reward, eta is learning rate, gammma is discount factor
+		#eta is learning rate, gammma is discount factor
 		Q[self.y][self.x][action_id] = Q[self.y][self.x][action_id]\
 										+ eta*(reward+gamma*np.max(Q[self.next_y][self.next_x], axis=0)\
 										- Q[self.y][self.x][action_id])
