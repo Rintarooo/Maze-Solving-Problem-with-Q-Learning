@@ -5,7 +5,8 @@ import pandas as pd
 class MazeEnv():
 	def __init__(self, start_x = 1, start_y = 1, goal_x = 8, goal_y = 8):
 		
-		self.maze=np.array([[0,0,0,0,0,0,0,0,0,0],
+		self.maze=np.array([
+							[0,0,0,0,0,0,0,0,0,0],
 							[0,1,0,1,1,1,1,1,1,0],
 							[0,1,1,1,0,1,1,0,1,0],
 							[0,0,0,1,0,1,0,0,1,0],
@@ -14,7 +15,7 @@ class MazeEnv():
 							[0,1,0,1,0,1,1,1,1,0],
 							[0,1,0,0,0,1,0,0,1,0],
 							[0,1,1,1,1,1,1,0,1,0],
-							[0,0,0,0,0,0,0,0,0,0],])
+							[0,0,0,0,0,0,0,0,0,0]])
 		
 		self.y, self.x = start_y, start_x
 		self.goal_y, self.goal_x = goal_y, goal_x
