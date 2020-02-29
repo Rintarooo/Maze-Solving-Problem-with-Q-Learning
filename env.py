@@ -6,15 +6,15 @@ class MazeEnv():
 	def __init__(self, start_x = 1, start_y = 1, goal_x = 8, goal_y = 8):
 		
 		self.maze=np.array([[0,0,0,0,0,0,0,0,0,0],
-							[0,1,0,1,1,1,1,1,1,0],
-							[0,1,1,1,0,1,1,0,1,0],
-							[0,0,0,1,0,1,0,0,1,0],
-							[0,1,1,1,1,1,1,1,1,0],
-							[0,1,0,1,0,0,0,0,0,0],
-							[0,1,0,1,0,1,1,1,1,0],
-							[0,1,0,0,0,1,0,0,1,0],
-							[0,1,1,1,1,1,1,0,1,0],
-							[0,0,0,0,0,0,0,0,0,0],])
+		[0,1,0,1,1,1,1,1,1,0],
+		[0,1,1,1,0,1,1,0,1,0],
+		[0,0,0,1,0,1,0,0,1,0],
+		[0,1,1,1,1,1,1,1,1,0],
+		[0,1,0,1,0,0,0,0,0,0],
+		[0,1,0,1,0,1,1,1,1,0],
+		[0,1,0,0,0,1,0,0,1,0],
+		[0,1,1,1,1,1,1,0,1,0],
+		[0,0,0,0,0,0,0,0,0,0],])
 		
 		self.y, self.x = start_y, start_x
 		self.goal_y, self.goal_x = goal_y, goal_x
@@ -68,9 +68,7 @@ class MazeEnv():
 	def Q_learning(self, action_id, reward, Q, eta, gamma):
 		#Q[s,a] = Q[s,a] + eta*(r + gamma*np.nanmax(Q[s_next,:]) - Q[s,a])
 		#eta is learning rate, gammma is discount factor
-		Q[self.y][self.x][action_id] = Q[self.y][self.x][action_id]\
-										+ eta*(reward+gamma*np.max(Q[self.next_y][self.next_x], axis=0)\
-										- Q[self.y][self.x][action_id])
+		Q[self.y][self.x][action_id] = Q[self.y][self.x][action_id] + eta*(reward+gamma*np.max(Q[self.next_y][self.next_x], axis=0) - Q[self.y][self.x][action_id])
 		return Q
 		
 	def update_state(self):
