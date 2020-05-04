@@ -1,4 +1,3 @@
-#Q-learning algorithm with an epsilon-greedy exploration strategy.
 import numpy as np
 import matplotlib.pyplot as plt
 import argparse
@@ -17,13 +16,13 @@ if __name__ == '__main__':
 		
 	agent = MazeEnv(start_x = 1, start_y = 1, goal_x = 8, goal_y = 8)
 	Q = np.random.rand(10, 10, 4)
-	each_steps = []	
+	each_step = []	
 	for i in range(1, cfg.iter+1):
 		agent.reset()
-		steps = []
+		step_num = []
 		action_id = agent.get_action_at_current_state(Q, cfg.eps)
 		while True:
-			steps.append(action_id)
+			step_num.append(action_id)
 			agent.get_next_state(action_id)
 			agent.get_reward(cfg.wall, cfg.time, cfg.goal)
 			
@@ -37,16 +36,16 @@ if __name__ == '__main__':
 			
 			agent.go_next_state()
 			action_id = next_action_id
-			# ~ print(agent.y,agent.x)
+			#print(agent.y,agent.x)
 			if agent.x == agent.goal_x and agent.y == agent.goal_y:
-				print('episode{}: {} steps'.format(i, len(steps)))
-				each_steps.append(len(steps))
+				print('episode{}: {} steps'.format(i, len(step_num)))
+				each_step.append(len(step_num))
 				break
 				
 		if i == cfg.iter:
 			fig=plt.figure()
 			ax=fig.add_subplot(111)
-			ax.plot(range(cfg.iter), each_steps)
+			ax.plot(range(cfg.iter), each_step)
 			ax.set_title('Maze Solver_' + cfg.mode)
 			ax.set_xlabel('Episodes')
 			ax.set_ylabel('Step Number')

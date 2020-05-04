@@ -32,10 +32,9 @@ class MazeEnv():
 		return action_id
 		
 	def get_action_at_next_state(self, Q, epsilon):
-		#epsilon greedy
-		if np.random.rand() < epsilon:#Explore: select a random action
+		if np.random.rand() < epsilon:#Explore
 			action_id = np.random.randint(4)
-		else:#Exploit: select the action with max value
+		else:#Exploit
 			action_id = np.argmax(Q[self.next_y][self.next_x], axis=0)
 		return action_id
 
@@ -44,7 +43,7 @@ class MazeEnv():
 		direction = direction_option[action_id]
 		
 		if direction == 'up':
-			if self.y == 0:#if agent cannot go up anymore
+			if self.y == 0:#if the agent cannot go up anymore
 				self.next_y, self.next_x = self.y, self.x#stays at the same position			
 			else:
 				self.next_y, self.next_x = self.y-1, self.x
