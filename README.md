@@ -12,11 +12,15 @@ The agent follows epsilon-greedy, chooses the next action randomly in the beginn
 
 
 ## Usage
-Run the following command.
+Run the following command
+
 ```python config.py -h```
-You will see the pickle file containing hyperparamer, then run this.
+
+You will see the pickle file containing hyperparamer, then run this
+
 ```python main.py -h```
-```main.py``` generates result figure how the path is optimized.
+
+```main.py``` generates result figure how the path is optimized
 
 ![Figure_1](https://user-images.githubusercontent.com/51239551/80980702-ebf79800-8e63-11ea-892e-1e2b81fd346c.png)
 ![Figure_2](https://user-images.githubusercontent.com/51239551/80980709-eef28880-8e63-11ea-8b62-f51391456120.png)
