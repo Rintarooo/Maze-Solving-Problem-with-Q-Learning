@@ -1,4 +1,4 @@
-# Maze_Solving_Problem_Value_based_RL(Reinfocement Learning)
+# Maze Solving Problem Value-based RL(Reinfocement Learning)
 
 ![Figure_1](https://user-images.githubusercontent.com/51239551/80976415-658c8780-8e5e-11ea-858b-9518be91b921.png)
 
