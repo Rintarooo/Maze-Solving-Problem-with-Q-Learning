@@ -1,4 +1,4 @@
-# Maze Solving Problem Value-based RL(Reinfocement Learning)
+# Maze Solving Problem Value-based Reinfocement Learning(RL)
 
 ![Figure_1](https://user-images.githubusercontent.com/51239551/80976415-658c8780-8e5e-11ea-858b-9518be91b921.png)
 
@@ -7,8 +7,8 @@ This is implementation of a single maze problem.
 In this work, we will find the shortest path for the agent to reach the goal. 
 Though the agent can move in four directions(up, down, left, right), the agent can't get out of 10×10 maze grid at the edge or corner.
 I implemented 2 ways of value based RL(Reinforcemnt Learning) algorithms, Q-Learning and SARSA.
-Q-Leaning is off-policy whereas SARSA is on-policy type, which means SARSA use real action at the next state to calculate Q value but calculation in Q-Learning is not related to what the next action is like.
-The agent follows epsilon-greedy, chooses the next action randomly in the beginning but gets to move around with high Q value over the time.
+Q-Leaning is off-policy whereas SARSA is on-policy type, which means SARSA use real action at the next state to update Q value but calculation in Q-Learning is not related to what the next action is like.
+The agent follows epsilon-greedy, chooses the next action randomly in the beginning but gets to move in the direction of highest Q value over time.
 
 
 ## Usage
